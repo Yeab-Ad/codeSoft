@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        overflow: hidden;
+        perspective: 100px;
+      }
+      h1 {
+        color: #000;
+        font-size: 45px;
+        text-align: center;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .irregular-shape {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-36%, -36%);
+        background-color: #e7af62;
+        background-size: 200px 200px;
+        border-radius: 80% 20% 32% 68% / 58% 22% 78% 42%;
+        height: 69%;
+        width: 41%;
+        box-shadow: 32px 29px 102px 8px #e7af62;
+      }
+
+      .calculator-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .calculator {
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        /* width: 300px; */
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        backdrop-filter: blur(25px);
+      }
+
+      input[type="text"] {
+        grid-column: span 4;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 20px;
+        background: #ffffff4f;
+        border-radius: 10px;
+        border: #ffffff8f solid 2px;
+      }
+      textarea {
+        grid-column: span 4;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 20px;
+        height: 185px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        resize: none;
+        text-align: right;
+        border-radius: 16px;
+        border: 1px solid #dddddd38;
+        background: #ffffff1c;
+      }
+
+      button {
+        padding: 20px;
+        font-size: 16px;
+        border-radius: 69px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        background: #ffffff82;
+      }
+
+      button:hover {
+        background-color: rgba(255, 235, 59, 0.8);
+        color: #000;
+      }
+
+      button:active {
+        background-color: rgba(255, 235, 59, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="irregular-shape"></div>
+    <div class="calculator-container">
+      <h1>Calculator</h1>
+      <div class="calculator">
+        <textarea id="result" readonly></textarea>
+
+        <button onclick="appendToScreen('7')">7</button>
+        <button onclick="appendToScreen('8')">8</button>
+        <button onclick="appendToScreen('9')">9</button>
+        <button onclick="clearScreen()">C</button>
+
+        <button onclick="appendToScreen('4')">4</button>
+        <button onclick="appendToScreen('5')">5</button>
+        <button onclick="appendToScreen('6')">6</button>
+        <button onclick="appendToScreen('+')">+</button>
+        <button onclick="appendToScreen('1')">1</button>
+        <button onclick="appendToScreen('2')">2</button>
+        <button onclick="appendToScreen('3')">3</button>
+        <button onclick="appendToScreen('-')">-</button>
+        <button onclick="appendToScreen('0')">0</button>
+        <button onclick="appendToScreen('*')">*</button>
+        <button onclick="appendToScreen('/')">/</button>
+        <button onclick="calculate()">=</button>
+      </div>
+    </div>
+
+    <script>
+      function appendToScreen(value) {
+        document.getElementById("result").value += value;
+      }
+
+      function clearScreen() {
+        document.getElementById("result").value = "";
+      }
+
+      function calculate() {
+        var input = document.getElementById("result").value;
+        var operators = ["+", "-", "*", "/"];
+        var operator = "";
+
+        for (var i = 0; i < input.length; i++) {
+          if (operators.includes(input[i])) {
+            operator = input[i];
+            break;
+          }
+        }
+
+        var operands = input.split(operator);
+        var operand1 = parseFloat(operands[0]);
+        var operand2 = parseFloat(operands[1]);
+
+        if (isNaN(operand1) || isNaN(operand2)) {
+          document.getElementById("result").value = "Invalid Input";
+          return;
+        }
+
+        var result;
+        switch (operator) {
+          case "+":
+            result = operand1 + operand2;
+            break;
+          case "-":
+            result = operand1 - operand2;
+            break;
+          case "*":
+            result = operand1 * operand2;
+            break;
+          case "/":
+            if (operand2 === 0) {
+              document.getElementById("result").value = "Undefined";
+              return;
+            }
+            result = operand1 / operand2;
+            break;
+          default:
+            document.getElementById("result").value = "Invalid Input";
+            return;
+        }
+
+        document.getElementById("result").value = result;
+      }
+    </script>
+  </body>
+</html>
