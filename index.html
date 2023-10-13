@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yeab-Ad - Portfolio</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      .intro {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 79%),
+          url("https://github.com/Yeab-Ad/Yeab-Ad/raw/main/GitHub%20%20banner.png")
+            center/cover no-repeat;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        padding: 119px;
+      }
+      header h1,
+      .intro p {
+        margin: 10px;
+      }
+      .about {
+        text-align: center;
+      }
+      h6 {
+        font-size: 40px;
+        text-align: center;
+      }
+      .see-more-button {
+        background-color: #ffeb3b;
+        border: none;
+        color: #000;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 70%;
+        margin: 50px auto;
+      }
+      .skill {
+        background-color: #e7e7e7;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 70%;
+        margin: 50px auto;
+      }
+      .project-card {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        margin: 20px;
+        border-radius: 10px;
+        color: #fff;
+        display: flex;
+        align-items: flex-end;
+        padding: 20px;
+      }
+      .project-details {
+        max-width: 250px;
+      }
+      .resume,
+      .contact {
+        text-align: center;
+        display: grid;
+        justify-items: center;
+        background: #f7f7f7bf;
+        margin: 27px;
+        border-radius: 19px;
+      }
+      .resume p {
+        background: #e7e7e7;
+        padding: 16px 22px;
+        border-radius: 10px;
+      }
+      .resume .contact,
+      h6 {
+        margin: 31px;
+      }
+      footer {
+        background-color: #f4f4f4;
+        padding: 20px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="intro" id="intro">
+      <header>
+        <h1>Yeab-Ad</h1>
+        <p>Web Developer | Designer</p>
+      </header>
+      <div class="about">
+        <p>Write a short bio highlighting your skills and experience.</p>
+      </div>
+      <a class="see-more-button" href="#portfolio">See More</a>
+    </div>
+    <h6>Skills</h6>
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">React</div>
+      <div class="skill">Angular</div>
+      <div class="skill">SCSS</div>
+      <div class="skill">MongoDB</div>
+      <div class="skill">Node.js</div>
+      <div class="skill">Flutter</div>
+      <div class="skill">Adobe XD</div>
+      <div class="skill">Adobe Illustrator</div>
+    </div>
+    <h6>Projects</h6>
+    <div class="projects" id="portfolio">
+      <div
+        style="
+          background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 79%),
+            url('https://drive.google.com/uc?id=1FmnkhvX0nac9BQThpvlh4Zy6W0SHbneJ')
+              center/cover no-repeat;
+        "
+        class="project-card"
+      >
+        <div class="project-details">
+          <h2>Notebook App</h2>
+          <p>
+            A simple note-taking application for organizing your tasks and
+            thoughts.
+          </p>
+        </div>
+      </div>
+      <div
+        style="
+          background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 79%),
+            url('https://drive.google.com/uc?id=1yzYVnub3KyjcPRSecf9GOPqcHe21eLCB')
+              center/cover no-repeat;
+        "
+        class="project-card"
+      >
+        <div class="project-details">
+          <h2>Music App</h2>
+          <p>
+            An interactive music application for streaming your favorite tunes
+            on the go.
+          </p>
+        </div>
+      </div>
+      <div
+        style="
+          background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 79%),
+            url('https://camo.githubusercontent.com/5d52d7f260c191d43ce29338f1a8f6238aa73a07497ed74a4bb9ff8fe741c780/68747470733a2f2f667265656269657375692e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032302f31322f506c616e742d53686f702d452d436f6d6d657263652d4170702e6a7067')
+              center/cover no-repeat;
+        "
+        class="project-card"
+      >
+        <div class="project-details">
+          <h2>Ecommerce App</h2>
+          <p>
+            An e-commerce platform for buying and selling a variety of products
+            online.
+          </p>
+        </div>
+      </div>
+      <div
+        style="
+          background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 79%),
+            url('https://drive.google.com/uc?id=1ucusTYYctniYz0GJDUBWc-uCN4bk0QDW')
+              center/cover no-repeat;
+        "
+        class="project-card"
+      >
+        <div class="project-details">
+          <h2>WeatherNow</h2>
+          <p>
+            A weather application providing real-time updates on current weather
+            conditions.
+          </p>
+        </div>
+      </div>
+      <div
+        style="
+          background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 79%),
+            url('https://drive.google.com/uc?id=1ymVB5s2CHftyQhSsltmQpXQRJv-Cfa9W')
+              center/cover no-repeat;
+        "
+        class="project-card"
+      >
+        <div class="project-details">
+          <h2>Mac OS Desktop</h2>
+          <p>
+            A desktop interface inspired by the user experience of Mac OS
+            operating systems.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="resume">
+      <h6>Resume</h6>
+      <p>Download my <a href="link_to_resume.pdf" download>resume</a>.</p>
+    </div>
+    <div class="contact">
+      <h6>Contact</h6>
+      <p>Email: yourname@example.com</p>
+      <p>Phone: 123-456-7890</p>
+    </div>
+    <footer>
+      <p>&copy; 2023 Yeab-Ad. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
